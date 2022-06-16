@@ -9,6 +9,7 @@ const product = require("./routes/addProduct");
 const contact = require("./routes/contact");
 const addProduct = require("./routes/addProduct");
 const card = require("./routes/card");
+const errorPage = require("./routes/errorPage");
 
 const exhbs = create({
   extname: "hbs",
@@ -34,6 +35,7 @@ app.use("/addProducts", product);
 app.use("/contact", contact);
 app.use("/", addProduct);
 app.use("/card", card);
+app.use("/error ", errorPage);
 
 try {
   const port = normalizePort(process.env.port || 5000);

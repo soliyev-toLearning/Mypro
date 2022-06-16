@@ -40,18 +40,18 @@ window.addEventListener("load", function (e) {
               .map((product) => {
                 return `
                             <tr>
-                                    <td>${product.type}</td>
-                                    <td class="price">${toCurrency(
+                                    <td class="td">${product.type}</td>
+                                    <td class="price td">${toCurrency(
                                       product.price
                                     )}</td>
-                                    <td class="count">${product.count}</td>
-                                    <td class="count_price">${toCurrency(
+                                    <td class="count td">${product.count}</td>
+                                    <td class="count_price td">${toCurrency(
                                       +product.price * product.count
                                     )}</td>
-                                    <td>
+                                    <td class="btn">
                                         <button id="${product.id}" data-id="${
                   product.id
-                }" class="btn remove-btn" style="background-color: red;">Delete</button>
+                }" class="btn remove-btn btn-del">Delete</button>
                                     </td>
                                 </tr>
                             `;
@@ -61,9 +61,33 @@ window.addEventListener("load", function (e) {
             cardBox.querySelector("tbody").innerHTML = html;
             cardBox.querySelector(".total").innerHTML = toCurrency(card.price);
           } else {
-            cardBox.innerHTML = "<h2>Card is empty</h2>";
+            cardBox.innerHTML = '<h2 class="mpt">Card is empty</h2>';
           }
         });
     }
   });
 });
+
+let bttn = document.querySelectorAll(".bttn");
+let span = document.querySelector(".spancha");
+let del = document.querySelector(".btn-del");
+
+var count = 0;
+
+for (let i = 0; i < bttn.length; i++) {
+  bttn[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    count += 1;
+
+    span.innerHTML = count;
+  });
+}
+
+for (let i = 0; i < bttn.length; i--) {
+  del[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    count -= 1;
+
+    span.innerHTML = count;
+  });
+}

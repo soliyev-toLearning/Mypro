@@ -16,6 +16,7 @@ class Card {
     }
 
     card.price = card.price + +product.price;
+    
 
     return new Promise((res, rej) => {
       fs.writeFile(dir, JSON.stringify(card), (err) => {

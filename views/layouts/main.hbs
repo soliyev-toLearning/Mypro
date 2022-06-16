@@ -3,11 +3,21 @@
 {{> head}}
 
 <body>
-    {{> nav}}
+    <div id="progressbar"></div>
+    <div id="scrollPath "></div>
+    {{> nav}}   
     {{{body}}}
     </div>
     {{> footer}}
     {{> script}}
+    <script type="text/javascript">
+    let progress =document.getElementById('progressbar')
+    let totalHeaight =document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function(){
+        let progressHeight = (window.pageYOffset / totalHeaight) * 100
+        progress.style.height = progressHeight + "%";
+    }
+    </script>
 </body>
 
 </html>
