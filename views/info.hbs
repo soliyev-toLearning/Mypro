@@ -1,0 +1,20 @@
+<div class="container" style="height: 88vh;">
+    <div class="row">
+    <div class="col s6  offset-s3">
+        <div class="card">
+            <div class="card-image">
+                <img src={{product.img}} alt={{product.img}}>
+                <span class="card-title" style="color: black;">{{product.type}}</span>
+            </div>
+            <div class="card-content">
+                <p>{{product.year}}</p>
+                <p>{{product.price}}</p>
+            </div>
+            <div class="card-action">
+                <a class="btn btn-delete" href="/remove/{{product.id}}">Delete</a>
+                <a class="btn btn-edit" href="/update/{{product.id}}">Edit</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

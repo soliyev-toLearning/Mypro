@@ -1,0 +1,40 @@
+<div class="container" style="height: 80vh;">
+
+    <div id="card" style="margin-top: 100px;">
+        {{#if card.products.length}}
+        <table style="width: 1560px;">
+            <thead>
+                <tr>
+                    <th class="th">Type</th>
+                    <th class="th">Price</th>
+                    <th class="th">Count</th>
+                    <th class="th">Total price</th>
+                    <th class="th" style="    transform: translateX(29px);">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each card.products}}
+                <tr>
+                    <td class="td   ">{{type}}</td>
+                    <td class="price td">{{price}}</td>
+                    <td class="count td">{{count}}</td>
+                    <td class="count_price td"></td>
+                    <td class="btn">
+                        <button id="{{id}}" data-id="{{id}}" class="remove-btn btn-del">Delete</button>
+                    </td>
+                </tr>
+
+                {{/each}}
+            </tbody>
+
+            <tr>
+                <td class="total">{{card.price}}</td>
+            </tr>
+        </table>
+        {{else}}
+        <h2 class="mpt">Card is empty</h2>
+        {{/if}}
+    </div>
+
+    <script src="/scripts/script.js"></script>
+</div>

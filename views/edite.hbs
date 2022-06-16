@@ -1,0 +1,24 @@
+<div class="container">
+    <form class="formtion" action="/update/{{oldProduct.id}}" method="POST">
+        <input class="inp" type="text" name="type" id="type" placeholder="Type of your product" value="{{oldProduct.type}}">
+        <br><br>
+        <input class="inp" type="number" name="price" id="price" placeholder="Price">
+        <br><br>
+        <input class="inp" type="text" name="img" id="img" placeholder="Book img" value="{{oldProduct.img}}">
+        <input type="hidden" name="id" id="id" value="{{oldProduct.id}}">
+        <br><br>
+        <input class="sub" type="submit">
+    </form>
+</div>
+
+{{!-- <div class="container">
+    <div class="hug"></div>
+    <form class="formtion" action="/addProduct" method="POST">
+    <input class="inp" type="text" name="type" id="type" placeholder="Type of your product">
+    <br><br>
+    <input class="inp" type="number" name="price" id="price" placeholder="Price">
+    <br><br>
+    <input class="inp" type="text" name="img" id="img" placeholder="Book img">
+    <input class="sub" type="submit">
+</form>
+</div> --}}

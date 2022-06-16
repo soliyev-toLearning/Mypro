@@ -1,0 +1,32 @@
+<div class="container" style="height: 90vh;">
+  <div class="products">
+    {{#if products}}
+    <div class="row">
+      {{#each products}}
+      <div class="col s12 m4">
+        <div class="card" style="margin-bottom: 60px;">
+          <div class="card-image">
+            <img src="{{img}}" alt="{{img}}" />
+            <span class="card-title" style="color: black;">{{type}}</span>
+          </div>
+          <div class="card-content" style="margin-bottom: -13px;">
+            <p >{{price}}  $</p>
+          </div>
+          <div class="card-action">
+            <a style="margin-left: 10px;" class="view" href="/info/{{id}}">View product</a>
+          </div>
+          <form action="/card/add" method="post">
+            <input type="hidden" name="id" id="id" value="{{id}}" />
+            <button type="submit" class="bttn">Buy</button>
+          </form>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{else}}
+    <h2 class="bla-bla">oop's There is not <br> any product yet</h2>
+    {{/if}}
+  </div>
+
+  {{!-- <a href="addProducts">Add product</a> --}}
+</div>
