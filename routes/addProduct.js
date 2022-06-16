@@ -33,7 +33,7 @@ router.get("/info/:id", async (req, res) => {
 //POST //works
 router.post("/addProduct", async (req, res) => {
   let productSchema = Joi.object({
-    type: Joi.string().min(3).max(15).required(),
+    type: Joi.string().required(),
     price: Joi.number().required(),
     img: Joi.string().required(),
   });
@@ -42,7 +42,7 @@ router.post("/addProduct", async (req, res) => {
     res.status(406).send(result.error.message);
     return;
   }
-  const product = new Products(req.body.type, req.body.year, req.body.price, req.body.img);
+  const product = new Products(req.body.type, req.body.price, req.body.img);
 
   await product.save();
   res.status(201).redirect("/product");

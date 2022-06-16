@@ -15,7 +15,7 @@ class Card {
       card.products[idx] = product;
     }
 
-    card.price = card.price + +product.price;
+    card.price = card.price + product.price;
     
 
     return new Promise((res, rej) => {
@@ -40,7 +40,7 @@ class Card {
     console.log(card);
     const idx = card.products.findIndex((product) => product.id === id);
 
-    card.price = card.price - +card.products[idx].price;
+    card.price = card.price - card.products[idx].price;
 
     if (card.products[idx].count === 1) {
       card.products = card.products.filter((product) => product.id !== id);

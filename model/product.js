@@ -79,7 +79,7 @@ class Products {
   }
 
   static async updateById(id, body) {
-    let products = await Products.getAll(); // []
+    let products = await Products.getAll();
 
     return new Promise((resolve, reject) => {
       let idx = products.findIndex((product) => product.id === id);
