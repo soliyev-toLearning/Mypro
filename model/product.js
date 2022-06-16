@@ -3,9 +3,8 @@ const fs = require("fs");
 const path = require("path");
 
 class Products {
-  constructor(type, year, price, img) {
+  constructor(type,  price, img) {
     this.type = type;
-    this.year = year;
     this.price = price;
     this.img = img;
   }
@@ -13,7 +12,6 @@ class Products {
   toObj() {
     return {
       type: this.type,
-      year: +this.year,
       price: +this.price,
       img: this.img,
       id: uuid(),
@@ -66,7 +64,7 @@ class Products {
     return new Promise((resolve, reject) => {
       let idx = products.findIndex((product) => product.id === id);
       if (idx === -1) {
-        return reject("Book id is not true");
+        return reject("Product id is not true");
       }
       products.splice(idx, 1);
       fs.writeFile(

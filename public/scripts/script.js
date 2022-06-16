@@ -12,16 +12,17 @@ window.addEventListener("load", function (e) {
   const cardContent = document.querySelectorAll(".card-content p");
 
   cardContent.forEach((card) => {
-    card.innerHTML = toCurrency(card.innerHTML);
+    card.innerHTML = toCurrency(+card.innerHTML);
   });
 
   total.innerHTML = toCurrency(total.innerHTML);
 
   countPrice.forEach((product, index) => {
+    // console.log(price[index].innerHTML);
     product.innerHTML = toCurrency(
       price[index].innerHTML * count[index].innerHTML
     );
-    price[index].innerHTML = toCurrency(price[index].innerHTML);
+    price[index].innerHTML = toCurrency(+price[index].innerHTML);
   });
 
   const cardBox = document.querySelector("#card");
@@ -68,26 +69,26 @@ window.addEventListener("load", function (e) {
   });
 });
 
-let bttn = document.querySelectorAll(".bttn");
-let span = document.querySelector(".spancha");
-let del = document.querySelector(".btn-del");
+// let bttn = document.querySelectorAll(".bttn");
+// let span = document.querySelector(".spancha");
+// let del = document.querySelector(".btn-del");
 
-var count = 0;
+// var count = 0;
 
-for (let i = 0; i < bttn.length; i++) {
-  bttn[i].addEventListener("click", (e) => {
-    e.preventDefault();
-    count += 1;
+// for (let i = 0; i < bttn.length; i++) {
+//   bttn[i].addEventListener("click", (e) => {
+//     e.preventDefault();
+//     count += 1;
 
-    span.innerHTML = count;
-  });
-}
+//     span.innerHTML = count;
+//   });
+// }
 
-for (let i = 0; i < bttn.length; i--) {
-  del[i].addEventListener("click", (e) => {
-    e.preventDefault();
-    count -= 1;
+// for (let i = 0; i < bttn.length; i--) {
+//   del[i].addEventListener("click", (e) => {
+//     e.preventDefault();
+//     count -= 1;
 
-    span.innerHTML = count;
-  });
-}
+//     span.innerHTML = count;
+//   });
+// }
